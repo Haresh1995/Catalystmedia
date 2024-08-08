@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+{% block body_block %}
+    <div class="container"><br><br><br><br><br>
+        <div class="jumbotron">
+            <h1>Login Form</h1>
+            <form method="post">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
