@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 {% extends 'home.html' %}
 {% block body_block %}
-    {% if data_count %}
-        <h1>{{ data_count }} data is been added to the database</h1>
-    {% else %}
         <form class="container mt-5" method="post" enctype="multipart/form-data">
             <h1>This is Catalyst Media File Uploader System..!</h1>
             {% csrf_token %}
+            {% if data_count %}
+                <h3>{{ data_count }} data is been added to the database</h3>
+            {% else %}
             <input type="file" name="files" class="mt-5">
             <button type="submit" class="btn btn-success">Submit</button>
+            {% endif %}
         </form>
-    {% endif %}
 {% endblock %}
